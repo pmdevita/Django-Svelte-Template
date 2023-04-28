@@ -5,6 +5,47 @@ A template for Django that uses InertiaJS, Svelte, and TailwindCSS. Preconfigure
 The master branch contains the template for use in the instructions, 
 and a runnable demo is in the testing branch.
 
+# What is in this template?
+
+If you're particular about how the template sets things up, you can see the full comparison 
+[here](https://github.com/pmdevita/Django-Svelte-Template/compare/django-svelte-base...testing).
+
+This template builds off of these two templates
+
+- Django 4.2 default project (should be forwards compatible for the rest of v4)
+- Svelte front end created from `npm create vite@latest`
+
+<details>
+<summary>The following changes have then been made</summary>
+
+- Django
+    - settings.py
+      - Added `django-vite`, `inertia-django`, `django-js-routes`, and example_app to apps
+      - Added InertiaMiddleware
+      - Added configuration for the template folder
+      - Set the static root directory
+      - Added `web/dist` as a staticfile dir
+      - Configuration for Vite
+      - Configuration for Inertia
+      - Configuration for JS Routes
+    - urls.py
+      - Added example_app urls
+      - Added static asset urls
+    - templates
+      - Added base.html template, with Inertia and Vite set up
+    - example_app
+      - Added an example app to demonstrate Inertia
+- Vite/Front end
+  - Removed default example files from the template
+  - Added `pages` directory to `src` with `Example.svelte`
+  - Setup `main.js` following InertiaJS Svelte docs
+  - Setup `ssr.js` following InertiaJS Svelte docs
+  - Added default TailwindCSS config
+  - Added default TailwindCSS-recommended PostCSS config
+  - Configured Vite to build with HMR, proper CORS, and correct public path, 
+with options left in to enable SSR
+</details>
+
 # Usage
 
 ## Prerequisites
@@ -41,3 +82,9 @@ static builds, set `DJANGO_VITE_DEV_MODE` to False)
 4. Run Django
 
 
+# Future/Additional
+
+A few things might be nice to have housed in this project as well.
+
+- Typescript version (made with `npm create vite@latest` with Svelte TypeScript option)
+- Templates for Vue and React
