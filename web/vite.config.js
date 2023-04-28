@@ -5,7 +5,13 @@ import { resolve } from "path"
 // https://vite.dev/config/
 export default defineConfig({
   base: "/static/",
-  plugins: [svelte()],
+  plugins: [
+      svelte({
+        compilerOptions: {
+          hydratable: false
+        }
+      })
+  ],
   build: {
     outDir: resolve('./dist'),
     manifest: true,
