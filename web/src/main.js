@@ -23,3 +23,5 @@ createInertiaApp({
     return mount(App, { target: el }, props)
   },
 })
+
+export default app
