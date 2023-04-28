@@ -143,7 +143,9 @@ TEMPLATES = [
 STATIC_URL = 'static/'
 # Added by Django Svelte Template, required for Vite
 STATIC_ROOT = BASE_DIR / "static"
-STATICFILES_DIRS = []
+STATICFILES_DIRS = [
+    BASE_DIR / "web" / "dist"
+]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
@@ -155,6 +157,9 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 DJANGO_VITE_DEV_MODE = True
 DJANGO_VITE_ASSETS_PATH = BASE_DIR / "web" / "dist"
+# This tells Django to load the manifest from the front end build folder
+# Comment it out if you run python manage.py collectstatic
+DJANGO_VITE_MANIFEST_PATH = DJANGO_VITE_ASSETS_PATH / "manifest.json"
 DJANGO_VITE_DEV_SERVER_PORT = 5173
 STATICFILES_DIRS.append(DJANGO_VITE_ASSETS_PATH)
 
@@ -163,6 +168,9 @@ STATICFILES_DIRS.append(DJANGO_VITE_ASSETS_PATH)
 CSRF_HEADER_NAME = 'HTTP_X_XSRF_TOKEN'
 CSRF_COOKIE_NAME = 'XSRF-TOKEN'
 INERTIA_LAYOUT = "base.html"
+INERTIA_VERSION = "1.0"
+INERTIA_SSR_ENABLED = False
+INERTIA_SSR_URL = "http://localhost:13714"
 
 # JS Routes
 
