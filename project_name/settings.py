@@ -37,6 +37,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_vite',
+    'inertia',
+    'js_routes',
+    'example_app'
 ]
 
 MIDDLEWARE = [
@@ -47,6 +51,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'inertia.middleware.InertiaMiddleware',
 ]
 
 ROOT_URLCONF = 'project_name.urls'
@@ -111,13 +116,57 @@ USE_I18N = True
 
 USE_TZ = True
 
+# Templates
+# Added by Django Svelte Template
+
+
+TEMPLATES = [
+    {
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'DIRS': ["templates"],
+        'APP_DIRS': True,
+        'OPTIONS': {
+            'context_processors': [
+                'django.template.context_processors.debug',
+                'django.template.context_processors.request',
+                'django.contrib.auth.context_processors.auth',
+                'django.contrib.messages.context_processors.messages',
+            ],
+        },
+    },
+]
+
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
 STATIC_URL = 'static/'
+# Added by Django Svelte Template, required for Vite
+STATIC_ROOT = BASE_DIR / "static"
+STATICFILES_DIRS = []
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+# Vite
+
+DJANGO_VITE_DEV_MODE = True
+DJANGO_VITE_ASSETS_PATH = BASE_DIR / "web" / "dist"
+DJANGO_VITE_DEV_SERVER_PORT = 5173
+STATICFILES_DIRS.append(DJANGO_VITE_ASSETS_PATH)
+
+# Inertia
+
+CSRF_HEADER_NAME = 'HTTP_X_XSRF_TOKEN'
+CSRF_COOKIE_NAME = 'XSRF-TOKEN'
+INERTIA_LAYOUT = "base.html"
+
+# JS Routes
+
+JS_ROUTES_INCLUSION_LIST = [
+    "example"
+]
+
