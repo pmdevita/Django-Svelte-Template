@@ -61,7 +61,7 @@ with options left in to enable SSR
 ```
 django-admin startproject --template https://github.com/pmdevita/django-svelte-template/archive/master.zip my_django_project .
 ```
-2. CD into `my_django_project/web` and run `npm i`
+2. CD into `web` and run `npm i`
 
 3. Run both Django and Vite (`python manage.py runserver` and `npm run dev`) and visit Django's URL http://127.0.0.1:8000
 

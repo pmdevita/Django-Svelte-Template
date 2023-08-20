@@ -1,6 +1,7 @@
 import 'vite/modulepreload-polyfill';
 import './app.css'
 import { createInertiaApp } from '@inertiajs/svelte'
+import DefaultLayout from "./layouts/DefaultLayout.svelte";
 
 // I think Inertia-Django's SSR implementation is slightly incomplete
 // so we need some extra logic to determine whether to hydrate.
@@ -11,7 +12,8 @@ let shouldHydrate = true;
 createInertiaApp({
   resolve: name => {
     const pages = import.meta.glob('./pages/**/*.svelte', { eager: true })
-    return pages[`./pages/${name}.svelte`]
+    let page = pages[`./pages/${name}.svelte`];
+    return { default: page.default, layout: page.layout || DefaultLayout }
   },
   setup({ el, App, props }) {
     // Mount has server-rendered set to true when SSR'd
