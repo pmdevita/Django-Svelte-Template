@@ -39,7 +39,9 @@ This template builds off of these two templates
   - Removed default example files from the template
   - Added `pages` directory to `src` with `Example.svelte`
   - Setup `main.js` following InertiaJS Svelte docs
+    - Added support for loading a page layout as per the [Inertia docs](https://inertiajs.com/pages)
   - Setup `ssr.js` following InertiaJS Svelte docs
+    - Added support for loading a page layout as per the [Inertia docs](https://inertiajs.com/pages)
   - Added default TailwindCSS config
   - Added default TailwindCSS-recommended PostCSS config
   - Configured Vite to build with HMR, proper CORS, and correct public path, 
@@ -88,3 +90,17 @@ A few things might be nice to have housed in this project as well.
 
 - Typescript version (made with `npm create vite@latest` with Svelte TypeScript option)
 - Templates for Vue and React
+
+# Contributing
+
+Since we try to maintain both a working example and a template on the same 
+git history, there's a bit of a process to updating this. Updates fall into 
+three categories
+
+1. Stock Django and Svelte/Vite config
+2. Django/Svelte example project
+3. Django template changes
+
+Each one belongs to a separate branch, which are chained by rebasing from 
+`django-svelte-base` -> `testing` -> `master`
+
