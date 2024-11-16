@@ -12,8 +12,8 @@ If you're particular about how the template sets things up, you can see the full
 
 This template builds off of these two templates
 
-- Django 4.2 default project (should be forwards compatible for the rest of v4)
-- Svelte front end created from `npm create vite@latest`
+- Django 5.1+ default project (backwards compatible to 4)
+- Svelte 4 front end created from `npm create vite@latest`
 
 <details>
 <summary>The following changes have then been made</summary>
