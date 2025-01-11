@@ -1,6 +1,6 @@
 <script>
-    export let inertia = false;
-    let counter = 0;
+    let { inertia = false } = $props();
+    let counter = $state(0);
     let incCounter = () => counter++;
 </script>
 <p>Hello from Svelte!
