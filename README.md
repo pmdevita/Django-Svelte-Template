@@ -12,8 +12,8 @@ If you're particular about how the template sets things up, you can see the full
 
 This template builds off of these two templates
 
-- Django 5.1+ default project (backwards compatible to 4)
-- Svelte 4 front end created from `npm create vite@latest`
+- Django 5.2+ default project (backwards compatible to 4)
+- Svelte 5 front end created from `npm create vite@latest`
 
 <details>
 <summary>The following changes have then been made</summary>
@@ -101,6 +101,14 @@ three categories
 2. Django/Svelte example project
 3. Django template changes
 
-Each one belongs to a separate branch, which are chained by rebasing from 
+Each one belongs to a separate branch, which are chained by rebasing from
 `django-svelte-base` -> `testing` -> `master`
+
+You can look at the current vanilla Django templates here https://github.com/django/django/tree/main/django/conf/project_template
+
+Svelte install is generated with 
+
+```shell
+npm create vite@latest
+```
 
