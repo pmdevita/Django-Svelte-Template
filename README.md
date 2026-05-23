@@ -42,8 +42,7 @@ This template builds off of these two templates
     - Added support for loading a page layout as per the [Inertia docs](https://inertiajs.com/pages)
   - Setup `ssr.js` following InertiaJS Svelte docs
     - Added support for loading a page layout as per the [Inertia docs](https://inertiajs.com/pages)
-  - Added default TailwindCSS config
-  - Added default TailwindCSS-recommended PostCSS config
+  - Added TailwindCSS, configured to also provide classes for Django Templates
   - Configured Vite to build with HMR, proper CORS, and correct public path, 
 with options left in to enable SSR
 </details>
